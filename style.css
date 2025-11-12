@@ -1,0 +1,53 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+/* Morandi 色系變數與基礎樣式 */
+:root {
+  /* 科技風配色（深色背景 + 霓虹主色） */
+  --md-bg: #07101A;        /* 主背景：深夜藍/黑 */
+  --md-surface: #0D1A24;   /* 較淺的面板色 */
+  --md-primary-text: #D7EAF0; /* 亮文字 */
+  --md-secondary-text: #9FB3BD; /* 次要文字 */
+
+  /* 霓虹 / 科技主色 */
+  --md-accent: #00E5FF;    /* 霓虹青 */
+  --md-accent-2: #7BF0D8;  /* 輔助亮綠 */
+  --md-success: #4CE0A6;   /* 成功綠 */
+  --md-danger: #FF6B6B;    /* 錯誤紅 */
+  --md-muted: #21333D;     /* 中性暗色（用於邊框/圓環底） */
+
+  --md-on-accent: #001217; /* 按鈕文字在亮色時用暗色以增加對比 */
+}
+
+body {
+  background: radial-gradient(ellipse at top left, rgba(0,229,255,0.06), transparent 20%), linear-gradient(180deg, #07101A 0%, #041018 100%);
+  color: var(--md-primary-text);
+  font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans TC', 'Helvetica Neue', Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 一般連結與按鈕外觀（若有純 HTML 元素時） */
+a { color: var(--md-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button, .btn {
+  background: var(--md-accent);
+  color: var(--md-on-accent);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,229,255,0.06), 0 0 12px rgba(0,229,255,0.06) inset;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+button:hover, .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(0,229,255,0.12), 0 0 24px rgba(0,229,255,0.12) inset; }
+
+/* 若要在開發時快速檢查變數 */
+/* .palette { position: fixed; right: 8px; top: 8px; background: rgba(255,255,255,0.6); padding: 8px; border-radius: 6px; } */
